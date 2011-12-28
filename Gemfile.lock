@@ -1,6 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    git (1.2.5)
     rack (1.4.0)
     rack-protection (1.1.4)
       rack
@@ -14,4 +15,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  git
   sinatra
