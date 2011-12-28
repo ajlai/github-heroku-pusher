@@ -27,7 +27,7 @@ get '/force-push' do
 end
 
 post '/post-receive' do
-  data = JSON.parse request.body.read
+  data = JSON.parse(params[:payload])
   # if data["repository"]["private"]
   #   "freak out"
   # end
