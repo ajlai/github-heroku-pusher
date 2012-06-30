@@ -6,8 +6,11 @@ module GitPusher
   extend self
 
   def deploy(github_url)
-    raise "Incorrect URL Provided #{github_url}" unless github_url == ENV['GITHUB_REPO']
-    repo = open_or_setup(github_url)
+    unless github_url.split("/").last(2).join("/") == ENV['GITHUB_REPO'].split(":").last.gsub(".git","")
+      raise "Incorrect URL Provided #{github_url}"
+    end
+
+    repo = open_or_setup(ENV['GITHUB_REPO'])
     wrapped_push(repo)
   end
 
