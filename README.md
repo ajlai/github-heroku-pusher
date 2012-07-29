@@ -4,12 +4,17 @@ github-heroku-pusher does pretty much what sounds like it does. It takes a githu
 
 Setup
 =====
-In order for the pusher to run, we need to get these four variables:
+
+In order for the pusher to run, we need to set these six variables:
+
+But first, generate a keypair with `ssh-keygen -t rsa -f ~/path/to/a/tmp-dir/id_rsa 2>&1`
 
 *   HEROKU_USERNAME
 *   HEROKU\_API_KEY (Found at the bottom of the [account page](https://api.heroku.com/account))
-*   GITHUB_REPO (Example: https://github.com/ajlai/Test)
+*   GITHUB_REPO (Example: git@github.com:ajlai/Test.git)
 *   HEROKU_REPO (Example: git@heroku.com:smooth-sword-2980.git)
+*   PUBLIC_KEY (contents of the id_rsa.pub file generated above)
+*   PRIVATE_KEY (contents of the id_rsa file generated above)
 
 Next, we can set up the app in Heroku:
 
